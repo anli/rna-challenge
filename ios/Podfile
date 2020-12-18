@@ -21,6 +21,7 @@ target 'Challenge' do
   post_install do |installer|
     flipper_post_install(installer)
   end
+
 end
 
 target 'Challenge-tvOS' do
