@@ -1,9 +1,9 @@
 ---
 format_version: '8'
-default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+default_step_lib_source: 'https://github.com/bitrise-io/bitrise-steplib.git'
 project_type: react-native
 app:
-  envs:
+  envs: null
 workflows:
   ci:
     steps:
@@ -15,7 +15,7 @@ workflows:
             - command: ci
       - npm@1.1:
           inputs:
-            - command: run ci:test
+            - command: 'run ci:test'
 trigger_map:
   - pull_request_source_branch: '*'
     pull_request_target_branch: develop
