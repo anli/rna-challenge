@@ -1,11 +1,24 @@
 import {StackNavigationOptions} from '@react-navigation/stack';
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
+import deviceInfoModule from 'react-native-device-info';
+import {Appbar, List} from 'react-native-paper';
+
+const AppbarHeaderTheme = {
+  colors: {
+    primary: '#f6f6f6',
+  },
+};
 
 const Component = () => {
+  const version = deviceInfoModule.getVersion();
   return (
     <View>
-      <Text>Setting</Text>
+      <Appbar.Header theme={AppbarHeaderTheme}>
+        <Appbar.Content title="Settings" />
+      </Appbar.Header>
+
+      <List.Item title="Version" description={version} />
     </View>
   );
 };
