@@ -40,22 +40,12 @@ const BottomTabComponent = () => {
       <Tab.Screen
         name="Tasks"
         component={TaskScreen.Component}
-        options={{
-          tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="check" color={color} size={size} />
-          ),
-          ...TaskScreen.options,
-        }}
+        options={getTabScreenOptions('check', TaskScreen.options)}
       />
       <Tab.Screen
         name="Settings"
         component={SettingScreen.Component}
-        options={{
-          tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="cog" color={color} size={size} />
-          ),
-          ...SettingScreen.options,
-        }}
+        options={getTabScreenOptions('cog', SettingScreen.options)}
       />
     </Tab.Navigator>
   );
@@ -69,3 +59,12 @@ class BottomTab {
   static Component: () => JSX.Element = BottomTabComponent;
   static options: StackNavigationOptions = BottomTabOptions;
 }
+
+const getTabScreenOptions = (icon: string, options: any) => {
+  return {
+    tabBarIcon: ({color, size}: {color: string; size: number}) => (
+      <MaterialCommunityIcons name={icon} color={color} size={size} />
+    ),
+    ...options,
+  };
+};
