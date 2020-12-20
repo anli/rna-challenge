@@ -4,7 +4,7 @@ import {
   createStackNavigator,
   StackNavigationOptions,
 } from '@react-navigation/stack';
-import {SettingScreen, TaskScreen} from '@screens';
+import {SettingScreen, TaskCreateScreen, TaskScreen} from '@screens';
 import {Colors} from '@theme';
 import React from 'react';
 import {Provider as PaperProvider} from 'react-native-paper';
@@ -16,11 +16,16 @@ const App = () => {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Tabs">
           <Stack.Screen
             name="Tabs"
             component={BottomTab.Component}
             options={BottomTab.options}
+          />
+          <Stack.Screen
+            name="TaskCreate"
+            component={TaskCreateScreen.Component}
+            options={TaskCreateScreen.options}
           />
         </Stack.Navigator>
       </NavigationContainer>

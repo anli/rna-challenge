@@ -9,7 +9,7 @@ describe('Task Screen', () => {
       And that I have 'first task' 'id is 1, name is Task A, 0 completedCount, 1 notCompleted Count'
       And that I have 'second task' 'id is 2, name is Task B, 2 completedCount, 1 notCompleted Count'
       And that I have 'third task' 'id is 3, name is Task C, 0 completedCount, 1 notCompleted Count'
-      When I am at Task Screen
+      When I am at 'Task Screen'
       Then I should see 'Tasks'
       And I should see 'Create Button'
       And I should see 'tasks names'
